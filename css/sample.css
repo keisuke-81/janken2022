@@ -1,0 +1,187 @@
+body{
+    background:lightyellow;
+  
+    font-size: 15px;
+}
+header{
+  
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+main{
+    border-bottom:1px solid #ccc;
+
+}
+
+/* color-------------------- */
+#face,.case{
+    background:yellow;
+}
+
+.hand_size,.flex{
+    background: lightcyan;
+}
+
+/* ------------------------ */
+
+ul img{
+width: 150px;
+}
+
+/* flex--------------------- */
+.flex{
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+}
+.flex div{
+  width: 10%;
+}
+
+#my img{
+    width: 150px;
+}
+
+.onemore{
+    height: 100px;
+}
+
+/* count_number--------------------- */
+
+.count_text{
+    font-size: 1rem;
+    margin-left: 30px;
+}
+#count_number{
+    font-size: 3rem;
+    margin-left: 80px;
+}
+
+.time{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* footer---------------------------- */
+
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+
+/* com_hand------------------------ */
+.hand_size,#com_hand{
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
+.hand_size h2{
+    font-size: 1.5rem;
+    
+}
+
+
+
+
+.gool{
+    display: flex;
+
+}
+#result{
+    font-size: 4rem;
+    color: crimson;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#my{
+    text-align: center;
+}
+#com_hand img{
+    width: 150px;
+}
+
+
+/* -------------------------------- */
+.btns{
+ width: 50%;
+ font-size: 2rem;
+ color: brown;
+}
+
+/* faceの画像 */
+#face {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+#face img{
+    height: 300px;
+    
+    
+}
+.case{
+    width: 20%;
+}
+.hand_size{
+    width: 20%;
+}
+
+#result{
+    width: 20%;
+}
+
+
+
+/* case---------------------------- */
+.case{
+   text-align: left;
+}
+.case h2{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.case p{
+    font-size: 1.5rem;
+}
+
+
+
+
+/* footer---------------------------- */
+footer{
+    background: cornsilk;
+    /* font: 1.2rem sans-serif;
+    height: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

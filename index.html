@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>じゃんけん</title>
+</head>
+
+<body>
+  <header>
+    <h1>じゃんけん心理＆動体視力トレーニング〜３秒で出せるかな？</h1>
+  </header>
+
+  <main>
+    
+    <div class="gool">
+      <div id="face" >
+        <img id="face_img" src="img/janken_gu.png" alt="相手の表情">
+        
+      </div>
+      <div class="case">
+        <h2>状況分析</h2> 
+        <div id="battleof_mentality">
+          <p>駆け引きのヒント</p>
+        </div>
+        
+      </div>
+      
+      
+      <div class="hand_size">
+        <h2>相手の手</h2>
+      <div id="com_hand">何かな
+
+      </div>
+      </div>
+    
+      <div id="result">結果は？</div>
+    </div>
+    
+    
+<div class="flex">
+  <h2>さあ、あなたはどれを出しますか？</h2>
+   
+    <a href="index.html"><button class="onemore">もう一回</button></a>
+    <div id="honda">
+      <button  class="onemore">本田圭佑<br>と対戦</button>
+    </div> 
+    
+      <div class="myHandText">
+        自分の手
+      </div>
+      <div id="my">
+        何かな？
+      </div>
+      <div class="time">
+        <div class="count_text">
+        time
+       </div>
+      <div id="count_number">
+        3
+      </div>
+    
+      </div>
+      
+      
+    
+</div>
+    
+    <ul>
+      <li id="gu_btn"><img src="img/janken_gu.png" alt=""></li>
+      <li id="cho_btn"><img src="img/janken_choki.png" alt=""></li>
+      <li id="par_btn"><img src="img/janken_pa.png" alt=""></li>
+    </ul>
+    
+    
+  </main>
+
+  <footer>
+       traning of jyanken.
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    //ここに処理を追加
+    //arat_time----------------------------
+    const alertmsg = function () {
+        alert("3秒経ちました");
+      }
+      setTimeout(alertmsg, 3000);
+
+  
+        const countdown_2 = function () {
+          $("#count_number").html("1");
+
+        }
+        setTimeout(countdown_2, 2000);
+
+        const countdown_1 = function () {
+          $("#count_number").html("2");
+
+        }
+        setTimeout(countdown_1, 1000);
+
+
+        const countdown_0 = function () {
+          $("#count_number").html("0");
+
+        }
+        setTimeout(countdown_0, 3000);
+      
+    //random-----------------------------------  
+
+    const randomNumber1 = Math.floor(Math.random() * 3);
+    const randomNumber2 = Math.floor(Math.random() * 3);
+    const randomNumber3 = Math.floor(Math.random() * 11);
+
+    // $("#gu_btn").on("click", function () {
+    //     $("#gu_btn").animate({
+    //       "marginLeft": "100px"
+    //     });
+    //   });
+    
+
+    // $("#gu_btn").on("click",function(){
+    //   const randomNumber1 = Math.floor(Math.random() * 3);
+    //   const randomNumber2 = Math.floor(Math.random() * 3);
+    //   if (randomNumber2===0){
+    //    // console.log(0);
+    //     $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+    //   }else if (randomNumber2 === 1) {
+    //    // console.log(1);
+    //     $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+    //   } else if (randomNumber2 === 2) {
+    //     //console.log(2);
+    //     $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+    //   }
+    //   if(randomNumber2 === 0){
+    //     $("#result").text("あいこ");
+    //   }else if(randomNumber2 === 1) {
+    //     $("#result").text("勝ち！");
+    //   } else if (randomNumber2 === 2) {
+    //     $("#result").text("負け！");
+    //   }
+    //   });
+    //   $("#cho_btn").on("click", function () {
+    //       const randomNumber1 = Math.floor(Math.random() * 3);
+    //       const randomNumber2 = Math.floor(Math.random() * 3);
+    //       if (randomNumber2 === 0) {
+    //         // console.log(0);
+    //         $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+    //       } else if (randomNumber2 === 1) {
+    //         // console.log(1);
+    //         $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+    //       } else if (randomNumber2 === 2) {
+    //         //console.log(2);
+    //         $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+    //       }
+    //       if (randomNumber2 === 0) {
+    //         $("#result").text("あいこ");
+    //       } else if (randomNumber2 === 1) {
+    //         $("#result").text("勝ち！");
+    //       } else if (randomNumber2 === 2) {
+    //         $("#result").text("負け！");
+    //       }
+    //     });
+    //     $("#par_btn").on("click", function () {
+    //         const randomNumber1 = Math.floor(Math.random() * 3);
+    //         const randomNumber2 = Math.floor(Math.random() * 3);
+    //         if (randomNumber2 === 0) {
+    //           // console.log(0);
+    //           $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+    //         } else if (randomNumber2 === 1) {
+    //           // console.log(1);
+    //           $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+    //         } else if (randomNumber2 === 2) {
+    //           //console.log(2);
+    //           $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+    //         }
+    //         if (randomNumber2 === 0) {
+    //           $("#result").text("あいこ");
+    //         } else if (randomNumber2 === 1) {
+    //           $("#result").text("勝ち！");
+    //         } else if (randomNumber2 === 2) {
+    //           $("#result").text("負け！");
+    //         }
+    //       });
+
+        //表情の出現方法----------------------------------------------------
+        
+
+          // $(window).on("load", function () {
+          //     // Handler when all assets (including images) are loaded
+          //   });
+
+          $(window).on("load",function(){
+
+            //choki_case---------------------------------
+            if(randomNumber3 === 0) {
+              $("#face").html('<img src="img2/choki_01.jpg" alt="画像">');
+              $("#battleof_mentality").html('<p>チョキ以外出せるのか？</p>');
+              //choki1_case
+              //push_gu-----------------------------
+                $("#gu_btn").on("click",function(){
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("勝ち！");
+
+                 });
+              //push_choki-------------------------
+                $("#cho_btn").on("click", function(){
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+                 });
+              //push_pa
+                 $("#par_btn").on("click", function(){
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("負け！");
+
+                });
+            }
+            if (randomNumber3 === 1) {
+              $("#face").html('<img src="img2/choki_02.jpg" alt="パーまん画像">');
+              $("#battleof_mentality").html('<p>徹底してこれ出しそうだ！</p>');
+              //choki2_case------------------------------------
+              // $("#choki_btn").on("click", function () {
+              //   });
+
+              //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("勝ち！");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("負け！");
+
+              });
+
+
+            }
+            if (randomNumber3 === 2) {
+              $("#face").html('<img src="img2/choki_03.jpg" alt="チョキ顔画像">');
+              $("#battleof_mentality").html('<p>何かすごいことしそうだが<br>結局出すの一緒でしょ</p>');
+              //choki3_case--------------------------------------
+              // $("#pa_btn").on("click", function () {
+              // });
+
+               //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("あなたの勝ち！");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("あなたの負け！");
+
+              });
+            }
+
+            //gu_case---------------------------------------
+            if (randomNumber3 === 3) {
+
+
+              //gu1_case--------------------------------
+
+              $("#face").html('<img src="img2/gu_01.jpg" alt="画像">');
+              $("#battleof_mentality").html('<p>はたしてチョキとかパーとかできるのか？</p>');
+
+              //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あなたの負け！");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("あなたの勝ち！");
+
+              });
+              
+            }
+
+            //gu2_case------------------------------------
+            if (randomNumber3 === 4) {
+              $("#face").html('<img src="img2/gu_02.jpg" alt="サンプル画像">');
+              $("#battleof_mentality").html('<p>思いっきりグーーー<br>って出してきそう</p>');
+
+             //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あなたの負け！");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("あなたの勝ち！");
+
+              }); 
+            }
+
+            //gu3_case---------------------------------
+            if (randomNumber3 === 5) {
+              $("#face").html('<img src="img2/gu_03.jpg" alt="サンプル画像">');
+              $("#battleof_mentality").html('<p>ひえ〜〜〜ゲンコツ確定</p>');
+
+              //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あなたの負け！");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("あなたの勝ち！");
+
+              });
+            }
+
+            //pa_case---------------------------------
+
+            //pa1_case--------------------------------
+            if (randomNumber3 === 6) {
+              $("#face").html('<img src="img2/pa_01.jpg" alt="サンプル画像">');
+              $("#battleof_mentality").html('<p>この人の攻撃<br>張り手か頭突きだったはず</p>');
+
+             //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("あなたの負け！");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あなたの勝ち！");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              }); 
+            }
+
+            //pa2_case--------------------------------
+            if (randomNumber3 === 7) {
+              $("#face").html('<img src="img2/pa_02.jpg" alt="サンプル画像">');
+              $("#battleof_mentality").html('<p>絶対にあれしか出さない</p>');
+
+              //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("あなたの負け！");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あなたの勝ち！");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              });
+            }
+
+            //pa3_case--------------------------------
+            if (randomNumber3 === 8) {
+              $("#face").html('<img src="img2/pa_03.jpg" alt="サンプル画像">');
+              $("#battleof_mentality").html('<p>このキャラも名前通りだろう</p>');
+
+              //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("あなたの負け！");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あなたの勝ち！");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              }); 
+            }
+
+            //free_case----------------------------------
+           //free_choki----------------------
+
+            if (randomNumber3 === 9) {
+              $("#face").html('<img src="img2/free_01.jpg" alt="サンプル画像">');
+              $("#battleof_mentality").html('<p>これは変化球来そう<br>負けないで！</p>');
+
+              //push_gu-----------------------------
+              $("#gu_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                $("#result").text("勝ち！");
+
+              });
+              //push_choki-------------------------
+              $("#cho_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                $("#result").text("あいこ");
+
+              });
+              //push_pa
+              $("#par_btn").on("click", function () {
+                $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                $("#result").text("負け！");
+
+              });
+
+            }
+
+      //free_janken----------------------------------
+
+
+
+            if (randomNumber3 === 10) {
+              $("#face").html('<img src="img2/free_02.jpg" alt="サンプル画像">');
+              $("#battleof_mentality").html('<p>この人駆け引きうまそう<br>ごめん分析できない</p>');
+
+      //         $("#gu_btn").on("click", function () {
+      //   $("#gu_btn").animate({
+      //     "marginLeft": "100px"
+      //   });
+      // });
+
+      const randomNumber3 = Math.floor(Math.random() * 6);
+    $("#gu_btn").on("click",function(){
+      const randomNumber1 = Math.floor(Math.random() * 3);
+      const randomNumber2 = Math.floor(Math.random() * 3);
+      const randomNumber3 = Math.floor(Math.random() * 6);
+
+      if (randomNumber3 === 0){
+       // console.log(0);
+        $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+      }else if (randomNumber3 === 1) {
+       // console.log(1);
+        $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+      } else if (randomNumber3 >= 2) {
+        //console.log(2);
+        $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+      }
+      if(randomNumber3 === 0){
+        $("#result").text("あいこ");
+      }else if(randomNumber3 === 1) {
+        $("#result").text("勝ち！");
+      } else if (randomNumber3 >= 2) {
+        $("#result").text("負け！");
+      }
+      });
+      $("#cho_btn").on("click", function () {
+          const randomNumber1 = Math.floor(Math.random() * 3);
+          const randomNumber2 = Math.floor(Math.random() * 3);
+          const randomNumber3 = Math.floor(Math.random() * 6);
+          if (randomNumber3 === 0) {
+            // console.log(0);
+            $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+            
+          } else if (randomNumber3 === 1) {
+            // console.log(1);
+            $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+          } else if (randomNumber3 >= 2) {
+            //console.log(2);
+            $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+          }
+          if (randomNumber3 === 0) {
+            $("#result").text("あいこ");
+          } else if (randomNumber3 === 1) {
+            $("#result").text("勝ち！");
+          } else if (randomNumber3 >= 2) {
+            $("#result").text("負け！");
+          }
+        });
+        $("#par_btn").on("click", function () {
+            const randomNumber1 = Math.floor(Math.random() * 3);
+            const randomNumber2 = Math.floor(Math.random() * 3);
+            const randomNumber3 = Math.floor(Math.random() * 6);
+            if (randomNumber3 === 0) {
+              // console.log(0);
+              $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+            } else if (randomNumber3 === 1) {
+              // console.log(1);
+              $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+            } else if (randomNumber3 >= 2) {
+              //console.log(2);
+              $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+            }
+            if (randomNumber3 === 0) {
+              $("#result").text("あいこ");
+            } else if (randomNumber3 === 1) {
+              $("#result").text("勝ち！");
+            } else if (randomNumber3 >= 2) {
+              $("#result").text("負け！");
+            }
+          });
+            }
+
+            //本田圭佑-----------------------------
+            $("#honda").on("click", function () {
+             $("#face").html('<img src="img2/free_02.jpg" alt="サンプル画像">');
+              $("#battleof_mentality").html('<p>この人駆け引きうまそう<br>ごめん分析できない</p>');
+              $("#gu_btn").on("click", function () {
+                const randomNumber1 = Math.floor(Math.random() * 3);
+                const randomNumber2 = Math.floor(Math.random() * 3);
+                const randomNumber3 = Math.floor(Math.random() * 6);
+
+                if (randomNumber3 === 0) {
+                  // console.log(0);
+                  $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                } else if (randomNumber3 === 1) {
+                  // console.log(1);
+                  $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                } else if (randomNumber3 >= 2) {
+                  //console.log(2);
+                  $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_gu.png" alt="サンプル画像">')
+                }
+                if (randomNumber3 === 0) {
+                  $("#result").text("あいこ");
+                } else if (randomNumber3 === 1) {
+                  $("#result").text("勝ち！");
+                } else if (randomNumber3 >= 2) {
+                  $("#result").text("負け！");
+                }
+              });
+              $("#cho_btn").on("click", function () {
+                const randomNumber1 = Math.floor(Math.random() * 3);
+                const randomNumber2 = Math.floor(Math.random() * 3);
+                const randomNumber3 = Math.floor(Math.random() * 6);
+                if (randomNumber3 === 0) {
+                  // console.log(0);
+                  $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                } else if (randomNumber3 === 1) {
+                  // console.log(1);
+                  $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                } else if (randomNumber3 >= 2) {
+                  //console.log(2);
+                  $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_choki.png" alt="サンプル画像">')
+                }
+                if (randomNumber3 === 0) {
+                  $("#result").text("あいこ");
+                } else if (randomNumber3 === 1) {
+                  $("#result").text("勝ち！");
+                } else if (randomNumber3 >= 2) {
+                  $("#result").text("負け！");
+                }
+              });
+              $("#par_btn").on("click", function () {
+                const randomNumber1 = Math.floor(Math.random() * 3);
+                const randomNumber2 = Math.floor(Math.random() * 3);
+                const randomNumber3 = Math.floor(Math.random() * 6);
+                if (randomNumber3 === 0) {
+                  // console.log(0);
+                  $("#com_hand").html('<img src="img/janken_pa.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                } else if (randomNumber3 === 1) {
+                  // console.log(1);
+                  $("#com_hand").html('<img src="img/janken_gu.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                } else if (randomNumber3 >= 2) {
+                  //console.log(2);
+                  $("#com_hand").html('<img src="img/janken_choki.png" alt="サンプル画像">');
+                  $("#my").html('<img src="img/janken_pa.png" alt="サンプル画像">')
+                }
+                if (randomNumber3 === 0) {
+                  $("#result").text("あいこ");
+                } else if (randomNumber3 === 1) {
+                  $("#result").text("勝ち！");
+                } else if (randomNumber3 >= 2) {
+                  $("#result").text("負け！");
+                }
+              });
+
+            });
+            
+            
+          });
+          
+
+       
+     
+
+
+
+
+         //----------------------------
+      
+
+  </script>
+  
+
+</body>
+
+</html>
